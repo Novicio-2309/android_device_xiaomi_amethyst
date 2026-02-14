@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <integer name="config_screenDensity">480</integer>
+
+    <integer name="config_defaultRefreshRate">60</integer>
+    <integer name="config_defaultPeakRefreshRate">120</integer>
+    <array name="config_fpsRequirement">
+        <item>120</item>
+        <item>90</item>
+        <item>60</item>
+    </array>
+
+    <dimen name="status_bar_height_portrait">130px</dimen>
+    <dimen name="status_bar_height_landscape">28dp</dimen>
+    <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
+
+    <dimen name="rounded_corner_radius">104px</dimen>
+    <dimen name="rounded_corner_radius_top">104px</dimen>
+    <dimen name="rounded_corner_radius_bottom">104px</dimen>
+
+    <bool name="config_supportsUdfps">true</bool>
+    <bool name="config_is_powerbutton_fingerprint">false</bool>
+
+    <bool name="config_enableSdCardBroadcasts">false</bool>
     <bool name="config_speed_up_audio_on_mt_calls">true</bool>
-
-    <bool name="config_have_notch">true</bool>
-
-    <integer name="config_screenBrightnessSettingDefault">102</integer>
-
-    <bool name="doze_proximity_check_before_pulse">true</bool>
 </resources>

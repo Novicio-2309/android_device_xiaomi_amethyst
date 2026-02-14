@@ -15,11 +15,12 @@ PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := 24115RA8EG
 PRODUCT_MANUFACTURER := Xiaomi
 
+# GMS Client ID
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
 # Build Fingerprint (Android 16 BP2A)
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=amethyst \
     PRODUCT_NAME=amethyst \
-    PRIVATE_BUILD_DESC="missi-user 16 BP2A.250605.031.A3 OS3.0.3.0.WOPCNXM release-keys"
-
-BUILD_FINGERPRINT := Redmi/amethyst/amethyst:16/BP2A.250605.031.A3/OS3.0.3.0.WOPCNXM:user/release-keys
+    TARGET_DEVICE=amethyst \
+    BUILD_FINGERPRINT=Redmi/amethyst/amethyst:16/BP2A.250605.031.A3/OS3.0.3.0.WOPCNXM:user/release-keys
 

@@ -40,6 +40,7 @@ BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3
+
 BOARD_KERNEL_PAGESIZE := 4096
 
 # Encryption
@@ -100,8 +101,8 @@ AB_OTA_PARTITIONS := \
     vbmeta_system \
     vendor \
     vendor_boot \
-    vendor_dlkm
-    system_dlkm
+    vendor_dlkm \
+    system_dlkm \
     odm
 
 # Inherit proprietary BoardConfig

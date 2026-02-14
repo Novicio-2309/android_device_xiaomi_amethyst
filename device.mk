@@ -94,3 +94,8 @@ DEVICE_MANIFEST_FILE += $(wildcard $(DEVICE_PATH)/vintf/*.xml)
 
 # Inherit from the proprietary vendor setup
 $(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)
+
+# Comprehensive Audio Configuration (All SKUs)
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*.xml,$(LOCAL_PATH)/audio,$(TARGET_COPY_OUT_VENDOR)/etc) \
+    $(call find-copy-subdir-files,*.conf,$(LOCAL_PATH)/audio,$(TARGET_COPY_OUT_VENDOR)/etc)

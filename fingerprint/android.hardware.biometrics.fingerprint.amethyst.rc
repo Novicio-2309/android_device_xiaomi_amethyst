@@ -1,0 +1,6 @@
+service vendor.fingerprint-amethyst /vendor/bin/hw/android.hardware.biometrics.fingerprint-service.xiaomi
+    class hal
+    user system
+    group system input uhid
+    capabilities SYS_NICE
+    onrestart restart zygote

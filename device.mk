@@ -2,8 +2,8 @@ DEVICE_PATH := device/xiaomi/amethyst
 
 # Display / Graphic
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 440dpi
-PRODUCT_AAPT_PREBUILT_DPI := xxhdpi
+PRODUCT_AAPT_PREF_CONFIG := 480dpi
+PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xxxhdpi
 
 # Graphics / Vulkan
 PRODUCT_COPY_FILES += \
@@ -25,6 +25,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth \
     vendor.qti.hardware.bluetooth.audio
+
+# Fingerprint / Biometrics
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint-service.xiaomi
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/fingerprint/android.hardware.biometrics.fingerprint.amethyst.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint.amethyst.rc \
+    vendor/xiaomi/amethyst/proprietary/vendor/etc/permissions/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -92,7 +100,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-12288-dalvik-heap.mk
 PRODUCT_SHIPPING_API_LEVEL := 34
 
 # VINTF Manifests
-
 # I-include na rin natin ang ibang manifest kung mayroon na
 DEVICE_MANIFEST_FILE += $(wildcard $(DEVICE_PATH)/vintf/*.xml)
 

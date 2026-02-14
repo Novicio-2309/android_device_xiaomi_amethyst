@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="config_udfps_sensor_props" translatable="false">
+        <item>610</item>  <item>2438</item> <item>95</item>   </string-array>
+
+    <bool name="config_supportsUdfps">true</bool>
+</resources>

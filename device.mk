@@ -50,6 +50,10 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-lineage
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.qti \

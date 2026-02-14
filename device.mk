@@ -1,9 +1,3 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
-# Inherit from proprietary vendor blobs
-$(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)
-
 DEVICE_PATH := device/xiaomi/amethyst
 
 # Display / Graphic
@@ -34,8 +28,6 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/proprietary/vendor/etc/audio/sku_volcano/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_volcano/audio_policy_configuration.xml \
-    $(DEVICE_PATH)/proprietary/vendor/etc/audio/sku_volcano/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_volcano/audio_effects.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
@@ -50,7 +42,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
-    android.hardware.sensors-service.multihal.rc
+    android.hardware.sensors-service-multihal.rc
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -96,7 +88,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-12288-dalvik-heap.mk
 PRODUCT_SHIPPING_API_LEVEL := 34
 
 # VINTF Manifests
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/vintf/power.xml
 
 # I-include na rin natin ang ibang manifest kung mayroon na
 DEVICE_MANIFEST_FILE += $(wildcard $(DEVICE_PATH)/vintf/*.xml)
+
+# Inherit from the proprietary vendor setup
+$(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)

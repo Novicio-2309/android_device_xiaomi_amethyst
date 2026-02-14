@@ -114,3 +114,6 @@ PRODUCT_COPY_FILES += \
 # Firmware Symlinks
 PRODUCT_PACKAGES += \
     firmware_p16u_symlink
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/bin/init.amethyst.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.amethyst.sh

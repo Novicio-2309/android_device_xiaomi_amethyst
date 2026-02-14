@@ -1,0 +1,37 @@
+# Inherit from common AOSP/Lineage configs
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Herit from LineageOS common product
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk
+
+# Inherit from the hardware-specific device.mk (Dito yung display, audio, etc.)
+$(call inherit-product, device/xiaomi/amethyst/device.mk)
+
+# Inherit from the proprietary vendor blobs
+$(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)
+
+# Device identifier
+PRODUCT_NAME := lineage_amethyst7
+PRODUCT_DEVICE := amethyst
+PRODUCT_BRAND := Redmi
+PRODUCT_MODEL := Redmi Note 14 Pro+ 5G
+PRODUCT_MANUFACTURER := Xiaomi
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Fingerprint mula sa screenshot mo (BP2A.250605.031.A3)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE="amethyst" \
+    PRODUCT_NAME="amethyst"
+    BUILD_FINGERPRINT := Redmi/amethyst/amethyst:16/BP2A.250605.031.A3/OS3.0.3.0.WOPCNXM:user/release-keys
+
+# Inherit from the proprietary vendor configurations
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom
+
+$(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)
+
+# VINTF Manifests
+DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/vintf/manifest.xml
+DEVICE_MATRIX_FILE += $(LOCAL_PATH)/vintf/compatibility_matrix.xml

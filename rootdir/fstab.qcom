@@ -1,0 +1,13 @@
+# Android fstab file.
+# The lookup keys are: [mount_point] [type] [device_path] [mount_flags] [fsmgr_flags]
+
+# <mount_point>       <type>      <device_path>                               <mount_flags>      <fsmgr_flags>
+system                erofs       system                                      ro                 wait,slotselect,avb=vbmeta_system,logical,first_stage_mount
+system_ext            erofs       system_ext                                  ro                 wait,slotselect,avb,logical,first_stage_mount
+product               erofs       product                                     ro                 wait,slotselect,avb,logical,first_stage_mount
+vendor                erofs       vendor                                      ro                 wait,slotselect,avb,logical,first_stage_mount
+vendor_dlkm           erofs       vendor_dlkm                                 ro                 wait,slotselect,avb,logical,first_stage_mount
+odm                   erofs       odm                                         ro                 wait,slotselect,avb,logical,first_stage_mount
+
+/dev/block/by-name/metadata /metadata ext4 noatime,nosuid,nodev,discard wait,check,formattable,first_stage_mount
+/dev/block/by-name/userdata /data f2fs noatime,nosuid,nodev,discard,inlinecrypt,reserve_root=32768,resgid=1065,fsync_mode=nobarrier,compress_extension=apk,compress_extension=so latemount,wait,check,quota,reservedsize=128M,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,metadata_encryption=aes-256-xts:wrappedkey_v0,keydirectory=/            metadata/vold/metadata_encryption

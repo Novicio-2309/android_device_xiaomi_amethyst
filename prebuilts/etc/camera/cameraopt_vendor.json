@@ -1,0 +1,109 @@
+{
+    "version": "1.0",
+    "LeakChecker":{
+        "leak_threshold": {
+            "heap": 600000,
+            "dmabuffer": 300000,
+            "gpu": 200000,
+            "fd": 60,
+            "tls": 40
+        }
+    },
+    "MemoryWatcher":{
+        "abort_threshold": {
+            "heap": 1600000,
+            "dmabuffer": 800000
+        }
+    },
+    "LaunchFilePrefetcher":{
+        "launch_prefetcher_files":[
+            "/odm/lib64/camx.device-impl.so",
+            "/odm/lib64/libecoengine.so",
+            "/apex/com.android.vndk.v34/lib64/libprocessgroup.so",
+            "/odm/lib64/hw/camera.qcom.sm8650.so",
+            "/odm/lib64/hw/camera.qcom.so",
+            "/odm/lib64/hw/camera.xiaomi.so",
+            "/odm/lib64/libxmi_hdr_checker.so",
+            "/odm/lib64/libmiSAT.so",
+            "/odm/lib64/libanc_edof_checker.so",
+            "/odm/lib64/libTrueSight.so",
+            "/odm/lib64/libeva.so",
+            "/odm/lib64/com.qti.chiusecaseselector.so",
+            "/odm/lib64/libc++_shared.so",
+            "/odm/lib64/libmialgo_sd.so",
+            "/odm/lib64/libSNPE.so",
+            "/odm/lib64/com.qti.feature2.generic.so",
+            "/odm/lib64/com.qti.feature2.rtmcx.so",
+            "/odm/lib64/com.qti.feature2.rt.so",
+            "/odm/lib64/com.qti.feature2.mfsr.so",
+            "/odm/lib64/com.qti.feature2.mcreprocrt.so",
+            "/odm/lib64/libisphwsetting.so",
+            "/odm/lib64/libmiZA.so",
+            "/odm/lib64/com.qti.feature2.hdr.so",
+            "/odm/lib64/com.qti.feature2.offlinestatsregeneration.so",
+            "/odm/lib64/libarcsoft_turbo_hdr_detection.so",
+            "/odm/lib64/libarcsoft_turbo_sr_detection.so",
+            "/odm/lib64/com.qti.feature2.fusion.so",
+            "/odm/lib64/com.qti.feature2.realtimeserializer.so",
+            "/odm/lib64/com.qti.feature2.statsregeneration.so",
+            "/odm/lib64/com.qti.feature2.mux.so",
+            "/odm/lib64/com.qti.camx.chiiqutils.so",
+            "/odm/lib64/com.qti.feature2.demux.so",
+            "/odm/lib64/com.qti.feature2.serializer.so",
+            "/odm/lib64/com.xiaomi.camhal.overlap.so",
+            "/odm/lib64/com.qti.feature2.swmf.so",
+            "/odm/lib64/com.qti.feature2.rawhdr.so",
+            "/odm/lib64/com.qti.feature2.metadataserializer.so",
+            "/odm/lib64/com.qti.feature2.derivedoffline.so",
+            "/odm/lib64/com.qualcomm.qti.mcx.usecase.extension.so",
+            "/odm/lib64/com.qualcomm.qti.mcx.linearmapper.so",
+            "/odm/lib64/libmiSATTranslate.so",
+            "/odm/lib64/libmialgo_ai_vision.so",
+            "/odm/lib64/camx.provider-impl.so",
+            "/odm/lib64/libcom.xiaomi.mawutilsold.so",
+            "/odm/lib64/libMiMotion.so",
+            "/odm/lib64/camera/components/com.qti.eisv3.so",
+            "/odm/lib64/camera/components/com.qti.node.gme.so",
+            "/odm/lib64/camera/components/com.mi.node.aiasd.so",
+            "/odm/lib64/camera/components/com.xiaomi.node.misv2.so",
+            "/odm/lib64/camera/components/com.qti.stats.af.so",
+            "/odm/lib64/camera/components/com.qti.node.ldc.so",
+            "/odm/lib64/camera/components/com.qti.hwcfg.ipe.so",
+            "/odm/lib64/camera/components/com.qti.stats.aec.so",
+            "/odm/lib64/camera/components/com.qti.stats.haf.so",
+            "/odm/lib64/camera/components/com.qti.stats.afc.so",
+            "/odm/lib64/camera/components/com.qti.hwcfg.ife.so",
+            "/odm/lib64/camera/components/com.qti.stats.afd.so",
+            "/odm/lib64/camera/components/com.qti.stats.awb.so",
+            "/odm/lib64/camera/components/com.xiaomi.node.smooth_transition.so",
+            "/vendor/lib64/android.hardware.camera.device-V2-ndk.so",
+            "/vendor/lib64/libcameraopt.so",
+            "/vendor/dsp/cdsp/libQ6MSFR_manager_skel.so"
+        ],
+        "prefetch_threshold":0.6
+    },
+    "ThreadPoolPolicyParams":{
+        "Preview": {
+            "priority":110,
+            "manager_create_thread_number":10,
+            "default_schedule_thread_number":6,
+            "category":"Preview"
+        },
+        "Capture": {
+            "priority":117,
+            "manager_create_thread_number":5,
+            "default_schedule_thread_number":5,
+            "category":"Capture"
+        },
+        "Other": {
+            "priority":116,
+            "manager_create_thread_number":1,
+            "default_schedule_thread_number":1,
+            "category":"Other"
+        }
+    },
+    "ScudoMemoryOptimization":{
+        "optimization_enable":true,
+        "low_ram_memory_enable":true
+    }
+}

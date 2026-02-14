@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_speed_up_audio_on_mt_calls">true</bool>
+
+    <bool name="config_have_notch">true</bool>
+
+    <integer name="config_screenBrightnessSettingDefault">102</integer>
+
+    <bool name="doze_proximity_check_before_pulse">true</bool>
+</resources>

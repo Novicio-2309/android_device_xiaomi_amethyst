@@ -110,3 +110,7 @@ $(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*.xml,$(LOCAL_PATH)/audio,$(TARGET_COPY_OUT_VENDOR)/etc) \
     $(call find-copy-subdir-files,*.conf,$(LOCAL_PATH)/audio,$(TARGET_COPY_OUT_VENDOR)/etc)
+
+# Firmware Symlinks
+PRODUCT_PACKAGES += \
+    firmware_p16u_symlink

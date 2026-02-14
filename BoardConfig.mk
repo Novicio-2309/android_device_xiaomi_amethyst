@@ -25,7 +25,7 @@ BOARD_KERNEL_IMAGE_NAME := Image
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/kernel/Image
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/kernel
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/kernel/dtbo.img
-BOARD_INCLUDE_DTB_IN_BOOTIMG := false
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 # Kernel Info
 BOARD_BOOT_HEADER_VERSION := 4
@@ -36,7 +36,10 @@ BOARD_RAMDISK_OFFSET       := 0x01000000
 BOARD_DTB_OFFSET           := 0x01f00000
 
 # Boot
-BOARD_BOOTCONFIG := androidboot.hardware=qcom
+BOARD_BOOTCONFIG := \
+    androidboot.hardware=qcom \
+    androidboot.memcg=1 \
+    androidboot.usbcontroller=a600000.dwc3
 BOARD_KERNEL_PAGESIZE := 4096
 
 # Encryption
@@ -50,7 +53,7 @@ BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := erofs
 BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := erofs
 
 # Kernel Command Line
-BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 erofs.reserved_pages=64 androidboot.verifiedbootstate=green
+BOARD_KERNEL_CMDLINE := console=ttynull stack_depot_disable=on cgroup_disable=pressure video=vfb:640x400,bpp=32,memsize=3072000 erofs.reserved_pages=64 androidboot.verifiedbootstate=green
 
 # MKBOOTIMG Arguments
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)

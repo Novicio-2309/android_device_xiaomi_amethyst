@@ -12,7 +12,7 @@ $(call inherit-product, device/xiaomi/amethyst/device.mk)
 $(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)
 
 # Device identifier
-PRODUCT_NAME := lineage_amethyst7
+PRODUCT_NAME := lineage_amethyst
 PRODUCT_DEVICE := amethyst
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 14 Pro+ 5G
@@ -29,8 +29,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 # Inherit from the proprietary vendor configurations
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom
-
-$(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)
 
 # VINTF Manifests
 DEVICE_MANIFEST_FILE += $(LOCAL_PATH)/vintf/manifest.xml

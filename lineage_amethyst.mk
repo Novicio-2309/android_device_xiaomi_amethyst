@@ -15,7 +15,7 @@ $(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)
 PRODUCT_NAME := lineage_amethyst
 PRODUCT_DEVICE := amethyst
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := Redmi Note 14 Pro+ 5G
+PRODUCT_MODEL := 24115RA8EG
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi

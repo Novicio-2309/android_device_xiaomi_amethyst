@@ -31,7 +31,7 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint-service.xiaomi
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/fingerprint/android.hardware.biometrics.fingerprint.amethyst.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint.amethyst.rc \
+    $(DEVICE_PATH)/fingerprint/android.hardware.biometrics.fingerprint.amethyst.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.biometrics.fingerprint.amethyst.rc \
     vendor/xiaomi/amethyst/proprietary/vendor/etc/permissions/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Audio
@@ -60,7 +60,7 @@ PRODUCT_PACKAGES += \
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
+    $(DEVICE_PATH)/overlay-lineage
 
 # Power
 PRODUCT_PACKAGES += \
@@ -100,7 +100,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-12288-dalvik-heap.mk
 PRODUCT_SHIPPING_API_LEVEL := 34
 
 # VINTF Manifests
-# I-include na rin natin ang ibang manifest kung mayroon na
 DEVICE_MANIFEST_FILE += $(wildcard $(DEVICE_PATH)/vintf/*.xml)
 
 # Inherit from the proprietary vendor setup
@@ -108,12 +107,12 @@ $(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)
 
 # Comprehensive Audio Configuration (All SKUs)
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*.xml,$(LOCAL_PATH)/audio,$(TARGET_COPY_OUT_VENDOR)/etc) \
-    $(call find-copy-subdir-files,*.conf,$(LOCAL_PATH)/audio,$(TARGET_COPY_OUT_VENDOR)/etc)
+    $(call find-copy-subdir-files,*.xml,$(DEVICE_PATH)/audio,$(TARGET_COPY_OUT_VENDOR)/etc) \
+    $(call find-copy-subdir-files,*.conf,$(DEVICE_PATH)/audio,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 # Firmware Symlinks
 PRODUCT_PACKAGES += \
     firmware_p16u_symlink
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/bin/init.amethyst.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.amethyst.sh
+    $(DEVICE_PATH)/rootdir/bin/init.amethyst.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.amethyst.sh

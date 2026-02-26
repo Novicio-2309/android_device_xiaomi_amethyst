@@ -120,10 +120,11 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # VINTF (Vendor Interface)
-DEVICE_MANIFEST_FILE += device/xiaomi/amethyst/manifest.xml
+DEVICE_MANIFEST_FILE := device/xiaomi/amethyst/manifest.xml
+DEVICE_MANIFEST_FILE += $(wildcard vendor/xiaomi/amethyst/proprietary/etc/vintf/manifest/*.xml)
+
 DEVICE_MATRIX_FILE := device/xiaomi/amethyst/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := vendor/lineage/config/device_framework_matrix.xml
-DEVICE_MANIFEST_FILE += $(wildcard vendor/xiaomi/amethyst/proprietary/etc/vintf/manifest/*.xml)
 
 PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/amethyst

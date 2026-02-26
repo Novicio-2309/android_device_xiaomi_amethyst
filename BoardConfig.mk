@@ -40,6 +40,12 @@ BOARD_KERNEL_OFFSET        := 0x00008000
 BOARD_RAMDISK_OFFSET       := 0x01000000
 BOARD_DTB_OFFSET           := 0x01f00000
 
+# Kernel Modules
+BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(LOCAL_PATH)/prebuilts/modules/*.ko)
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := \
+    $(LOCAL_PATH)/prebuilts/modules/msm_geni_serial.ko \
+    $(LOCAL_PATH)/prebuilts/modules/qcom_geni_se.ko
+
 # GKI / Android 16 Requirements
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_KERNEL_BINARIES := kernel

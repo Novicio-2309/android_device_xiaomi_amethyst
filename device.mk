@@ -20,9 +20,24 @@ PRODUCT_SHIPPING_API_LEVEL := 34
 # Virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
 
+# Overlays
+PRODUCT_PACKAGES += \
+    LineageFodOverlay
+
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
 # Soong Config (Qualcomm Volcano)
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/amethyst
+
+# Power HAL (Thermal & Performance)
+PRODUCT_PACKAGES += \
+    android.hardware.power-service.pixel-libperfmgr \
+    libperfmgr
+
+# Thermal Config File (Kukuhanin natin sa Vendor mamaya)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
 
 # Inherit from the proprietary vendor setup
 $(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)

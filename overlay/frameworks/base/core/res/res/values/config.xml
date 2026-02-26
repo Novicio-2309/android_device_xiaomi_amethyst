@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="config_defaultRefreshRate" translatable="false">60</integer>
+
+    <integer name="config_defaultPeakRefreshRate" translatable="false">120</integer>
+
+    <integer-array name="config_fpsList" translatable="false">
+        <item>60</item>
+        <item>90</item>
+        <item>120</item>
+    </integer-array>
+
+    <integer name="config_screenBrightnessDoze" translatable="false">1</integer>
+    <integer name="config_screenBrightnessDim" translatable="false">1</integer>
+</resources>

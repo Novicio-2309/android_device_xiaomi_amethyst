@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="config_unsupported_fod_sensor_location">
+        <item>610</item>  <item>2250</item> <item>95</item>   </integer-array>
+
+    <bool name="config_needCustomFodJob">true</bool>
+</resources>

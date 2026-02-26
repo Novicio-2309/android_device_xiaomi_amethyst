@@ -117,6 +117,11 @@ DEVICE_MANIFEST_FILE += device/xiaomi/amethyst/manifest.xml
 DEVICE_MATRIX_FILE := device/xiaomi/amethyst/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := vendor/lineage/config/device_framework_matrix.xml
 
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/xiaomi/amethyst
+
 # Properties
 TARGET_SYSTEM_PROP += device/xiaomi/amethyst/system.prop
 TARGET_VENDOR_PROP += device/xiaomi/amethyst/vendor.prop
+
+include vendor/xiaomi/amethyst/BoardConfigVendor.mk

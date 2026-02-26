@@ -11,3 +11,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.m
 # Soong Config (Qualcomm Volcano)
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/amethyst
+
+# Inherit from the proprietary vendor setup
+$(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)

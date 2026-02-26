@@ -12,6 +12,13 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
 
+# Audio
+BOARD_USES_ALSA_AUDIO := true
+USE_XML_AUDIO_POLICY_CONF := true
+
+# Camera
+TARGET_USES_QTI_CAMERA_DEVICE := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := volcano
 TARGET_NO_BOOTLOADER := true
@@ -116,6 +123,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 DEVICE_MANIFEST_FILE += device/xiaomi/amethyst/manifest.xml
 DEVICE_MATRIX_FILE := device/xiaomi/amethyst/compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := vendor/lineage/config/device_framework_matrix.xml
+DEVICE_MANIFEST_FILE += $(wildcard vendor/xiaomi/amethyst/proprietary/etc/vintf/manifest/*.xml)
 
 PRODUCT_SOONG_NAMESPACES += \
     vendor/xiaomi/amethyst

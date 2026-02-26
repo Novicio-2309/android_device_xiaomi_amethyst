@@ -1,0 +1,8 @@
+<compatibility-matrix version="2.0" type="device" level="202404">
+    <vendor-ndk>
+        <version>36</version>
+    </vendor-ndk>
+    <system-sdk>
+        <version>36</version>
+    </system-sdk>
+</compatibility-matrix>

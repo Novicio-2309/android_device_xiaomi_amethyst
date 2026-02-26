@@ -1,0 +1,26 @@
+# Graphics & Display
+# Base sa 1.5K resolution ng Amethyst (1220 x 2712)
+ro.sf.lcd_density=440
+persist.sys.dispatch_index=1
+
+# Qualcomm SoC
+ro.soc.model=SM7635
+ro.soc.manufacturer=Qualcomm
+
+# Dalvik (Optimized for 8GB/12GB/16GB RAM)
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=4m
+dalvik.vm.heapmaxfree=8m
+
+# USB & Debugging
+persist.sys.usb.config=mtp,adb
+
+# Radio / Telephony (Global/China settings)
+ro.telephony.default_network=33,33
+telephony.lteOnCdmaDevice=1
+
+# Xiaomi Specifics
+ro.product.mod_device=amethyst_global

@@ -1,46 +1,13 @@
-# Graphics & Display
-# Base sa 1.5K resolution ng Amethyst (1220 x 2712)
+# Identity
+ro.product.model=Redmi Note 14 Pro+
+ro.product.device=amethyst
+
+# Lags & Smoothness
+persist.sys.binary_xml=true
+ro.shell.disable_ext_prof=true
+
+# Display Density (Ito ang kailangan ng Framework)
 ro.sf.lcd_density=440
-persist.sys.dispatch_index=1
 
-# Qualcomm SoC
-ro.soc.model=SM7635
-ro.soc.manufacturer=Qualcomm
-
-# Dalvik (Optimized for 8GB/12GB/16GB RAM)
-dalvik.vm.heapstartsize=16m
-dalvik.vm.heapgrowthlimit=256m
-dalvik.vm.heapsize=512m
-dalvik.vm.heaptargetutilization=0.75
-dalvik.vm.heapminfree=4m
-dalvik.vm.heapmaxfree=8m
-
-# Graphics Smooth
-ro.surface_flinger.has_wide_color_display=true
-ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.use_color_management=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
-
-# IMS / VoLTE / VoWiFi
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
-persist.vendor.radio.data_ltd_sys_ind=1
-persist.vendor.radio.ignore_dom_nw_sel=true
-
-# USB & Debugging
+# USB Config
 persist.sys.usb.config=mtp,adb
-
-# Carrier Aggregation (4G+/5G+)
-persist.vendor.radio.custom_capability=0
-persist.vendor.radio.relay_op_mod_is_enabled=1
-
-# Radio / Telephony (Global/China settings)
-ro.telephony.default_network=33,33
-telephony.lteOnCdmaDevice=1
-persist.vendor.radio.5g_mode_pref=1
-persist.vendor.radio.rat_on=combine
-persist.vendor.radio.data_con_recovery=true
-
-# Xiaomi Specifics
-ro.product.mod_device=amethyst_global

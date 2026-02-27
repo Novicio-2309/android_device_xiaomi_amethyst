@@ -1,0 +1,47 @@
+# Qualcomm SoC
+ro.soc.model=SM7635
+ro.soc.manufacturer=Qualcomm
+
+# Dalvik (Optimized for Modern RAM)
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=4m
+dalvik.vm.heapmaxfree=8m
+
+# Audio / Dolby Atmos
+ro.vendor.audio.sdk.fluencetype=none
+vendor.audio.dolby.ds2.enabled=true
+vendor.audio.dolby.ds2.hardbypass=true
+ro.vendor.audio.dolby.dap.support=true
+
+# Camera (Prevent Crashing & Black Screen)
+persist.vendor.camera.privapp.list=com.android.camera,org.codeaurora.snapcam,com.xiaomi.camera
+# Enable Auxiliary Cameras (Ultra-wide/Macro/Tele)
+vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam,com.xiaomi.camera
+# Camera HAL Versioning
+persist.vendor.camera.enable_dual_logical_camera=1
+
+# Graphics & SurfaceFlinger
+ro.surface_flinger.has_wide_color_display=true
+ro.surface_flinger.has_HDR_display=true
+ro.surface_flinger.use_color_management=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+persist.sys.dispatch_index=1
+
+# RIL / Radio / 5G (Network Tweaks)
+ro.telephony.default_network=33,33
+telephony.lteOnCdmaDevice=1
+persist.vendor.radio.5g_mode_pref=1
+persist.vendor.radio.rat_on=combine
+persist.vendor.radio.data_con_recovery=true
+persist.vendor.radio.ignore_dom_nw_sel=true
+persist.vendor.radio.relay_op_mod_is_enabled=1
+persist.vendor.radio.custom_capability=0
+persist.vendor.radio.data_ltd_sys_ind=1
+
+# IMS (VoLTE / VoWiFi)
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1

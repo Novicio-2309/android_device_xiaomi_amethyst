@@ -1,10 +1,10 @@
 # Prebuilt Hal fragments (Camera, Audio, Display)
 DEVICE_MANIFEST_FILE += $(wildcard vendor/xiaomi/amethyst/proprietary/etc/vintf/manifest/*.xml)
 
-# Audio configuration
+# Audio Configuration
 PRODUCT_COPY_FILES += \
-    $(wildcard vendor/xiaomi/amethyst/proprietary/vendor/etc/audio/*.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/) \
-    $(wildcard vendor/xiaomi/amethyst/proprietary/vendor/etc/*.xml:$(TARGET_COPY_OUT_VENDOR)/etc/)
+    vendor/xiaomi/amethyst/proprietary/etc/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    vendor/xiaomi/amethyst/proprietary/etc/audio/sku_volcano/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_volcano/audio_policy_configuration.xml
 
 # Sensors & Sensors Config
 PRODUCT_COPY_FILES += \

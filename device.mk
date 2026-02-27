@@ -35,9 +35,5 @@ PRODUCT_PACKAGES += \
     android.hardware.power-service.pixel-libperfmgr \
     libperfmgr
 
-# Thermal Config File (Kukuhanin natin sa Vendor mamaya)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
-
 # Inherit from the proprietary vendor setup
 $(call inherit-product, vendor/xiaomi/amethyst/amethyst-vendor.mk)

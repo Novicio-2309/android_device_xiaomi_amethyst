@@ -26,6 +26,10 @@ PRODUCT_PACKAGES += \
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Display Density
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := 440dpi
+
 # Soong Config (Qualcomm Volcano)
 PRODUCT_SOONG_NAMESPACES += \
     device/xiaomi/amethyst
